@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-typedef struct
+/*
+ * Kruskal's algorithm for minimum spanning tree
+ * adj matrix graph representation
+ * arcs是邻接矩阵，VertexSet是顶点集合，lowcost是边的权重
+ */
+
+typedef struct Edge
 {
     int u, v;
     int lowcost;
@@ -34,7 +40,7 @@ void MiniSpanTree_Kruskal(Graph *gn)
     int u, v;
 
     for (i = 0; i < gn->vexnum; ++i)
-        VertexSet[i] = i;
+        VertexSet[i] = i; // 初始化每个顶点的标签为其自身
     setid = i;
 
     while (Minium(gn, &e))
@@ -44,11 +50,11 @@ void MiniSpanTree_Kruskal(Graph *gn)
                Vertex2Name(gn->vertex[e.v].data),
                e.lowcost); /*输出生成树的当前最小边（u,v）*/
 
-        u = VertexSet[e.u];
-        v = VertexSet[e.v];
+        Setu = VertexSet[e.u];
+        Setv = VertexSet[e.v];
         for (i = 0; i < gn->vexnum; ++i)
-            if (VertexSet[i] == u || VertexSet[i] == v)
-                VertexSet[i] = setid;
+            if (VertexSet[i] == Setu || VertexSet[i] == Setv)
+                VertexSet[i] = setid; // 将u和v所在的集合合并
         ++setid;
     }
 }
