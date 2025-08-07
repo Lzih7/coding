@@ -31,6 +31,9 @@ int main(){
         float area=pShape->area();
         float perimeter=pShape->perimeter();
         cout << "Area: " << area << ", Perimeter: " << perimeter << endl;
+        delete pShape;
     }
-    
+    for(auto gen : genlist){
+        delete gen;
+    }
 }
