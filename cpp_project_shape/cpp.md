@@ -22,3 +22,7 @@ MathUtils utils;
 int result2 = utils.add(3, 5);           // 可以，但没必要
 int result3 = utils::add(3, 5);          // 也可以（等价）
 ```
+# 关键字
+1. const：不能重新赋值，但可以改变指向的内容
+- const成员函数`int getvalue() const {...}`：不能改变除mutable修饰之外的变量的值
+- `&`是不用解引用的指针，是一个变量的别名，不占用额外空间
