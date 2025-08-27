@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define Stack_Size 50
 typedef BiTNode *ElemType;
@@ -38,9 +39,9 @@ void preorder(BiTree root)
         BiTree temp = NULL;
         pop(stk, &temp);
         visit_node(temp);
-        if (temp->left)
-            push(stk, temp->left);
         if (temp->right)
             push(stk, temp->right);
+        if (temp->left)
+            push(stk, temp->left);
     }
 }
