@@ -27,7 +27,7 @@ void PostOrder(BiTree root, CALLBACK Visit) {
     q = NULL;
     p = root;
 
-    InitStack(&S);
+    InitStack(S);
 
     //TODO
     while (p != NULL || !IsEmpty(S)) {
