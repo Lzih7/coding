@@ -3,6 +3,8 @@
     "files.associations": {
         "stdlib.h": "c",
         "iostream": "cpp",
-        "random": "c"
+        "random": "c",
+        "cstdlib": "c",
+        "cmath": "cpp"
     }
 }
